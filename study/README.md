@@ -67,6 +67,42 @@ TypeScriptではユニオン型を使うことができます。
 
 この場合、keywordはstring型、number型、boolean型のどれかを代入することができます。
 
+### リテラル型
+
+TypeScriptではリテラル型を使うことができます。
+これは、文字列や数値の値そのものを型として指定することができます。
+
+```
+'use strict';
+
+{
+  // リテラル型
+  // これらの変数は、これらの値以外のすべてをはじくようになります
+  let taxRete: 0.1;
+  let myEmail: 'taro@example.com';
+  let isPaid: true;
+  myEmail = 'jiro@ecample.com'
+}
+```
+
+上記のコードを例にみると、taxReteは0.1以外の値を代入することができません。
+myEmailも `taro@example.com` 以外の値を代入することができません。
+
+このようにリテラル型はその値そのものを型として指定することができます。
+こういったコードを見ると `const` で宣言するのと何が違うのかと思うかもしれませんが
+`const` は変数の再代入を禁止するだけで、型を指定することはできません。
+
+なので、リテラル型はよく、ユニオン型と組み合わせて使われます。
+
+```typescript
+
+  // リテラル側はユニオン型とよく使われる
+  let result: 'Pass' | 'Fail';
+  result =  'Good';
+  result =  50
+```
+
+
 ### 参考
 
 
