@@ -49,7 +49,23 @@ TypeScriptでは型を明示的に宣言しなくても、コンパイラが型�
 このように型を明示的に宣言しなくても、コンパイラが型を推論してくれますが
 明示的に型を宣言するか、型推論にするかはプロジェクトの方針によります。
 
+### ユニオン型
 
+TypeScriptではユニオン型を使うことができます。
+ユニオン型とは、複数の型を指定することができる型のことです。
+
+```typescript
+'use strict';
+
+{
+  let keyword: string | number | boolean;
+  keyword = 'milk';
+  keyword = 1234;
+  keyword = false;
+}
+```
+
+この場合、keywordはstring型、number型、boolean型のどれかを代入することができます。
 
 ### 参考
 
