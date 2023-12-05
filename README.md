@@ -58,3 +58,9 @@ tsc sum.ts
 ```
 node sum.js #30
 ```
+
+これを1回で実行するには
+
+```
+tsc sum.ts && node sum.js
+```
