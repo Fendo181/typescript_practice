@@ -102,6 +102,27 @@ myEmailも `taro@example.com` 以外の値を代入することができませ�
   result =  50
 ```
 
+###　型エイリアス
+
+TypeScriptでは型エイリアスを使うことができます。
+型エイリアスとは、型に別名をつけることができる機能です。
+
+```typescript
+'use strict';
+
+{
+  // type キーワードを使って型に名前をつける場合、最初の 1 文字目は大文字にするのが一般的
+  type ResultStatus = 'Pass' | 'Fail';
+  // let englishResult: 'Pass' | 'Fail';
+  let englishResult: ResultStatus;
+  let mathResult: 'Pass' | 'Fail';
+}
+```
+
+このコードでは、ResultStatusという型エイリアスを使っています。
+同じ型を複数の変数で使う場合に、型エイリアスを使うことで楽に変更ができます。
+
+
 
 ### 参考
 
