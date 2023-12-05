@@ -220,6 +220,30 @@ user.score = 50
 }
 ```
 
+また、interfaceはプロパティにreadonlyをつけることができます。
+こうする事で、プロパティの変更を禁止することができます。
+また、プロパティに `?` をつけることで、そのプロパティは任意になるため、値を呼び出さなくてもエラーになりません。
+
+```typescript
+'use strict';
+
+{
+  interface User {
+    readonly userName: string;
+    score: number;
+    email : ?string;
+
+  const user: User = {
+    userName: 'Taro',
+    score: 80,
+  };
+
+  console.log(user.userName)
+  user.userName = 'Jiro'; //  read-only propertyなのでエラーになる
+}
+```
+
+
 ### 参考
 
 
