@@ -7,9 +7,14 @@ function App() {
     <div className="App">
       <header className="App-header">
         TypeScriptは良いぞ！
+        <LikeButton />
       </header>
     </div>
   );
+}
+
+function LikeButton() {
+  return <span>ここにボタンが出る予定です</span>
 }
 
 export default App;
