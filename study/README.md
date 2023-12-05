@@ -243,6 +243,22 @@ user.score = 50
 }
 ```
 
+### 関数にも型をつける
+
+TypeScriptでは関数にも型をつけることができます。
+関数の引数と戻り値の型を指定することができます。
+
+```typescript
+'use strict';
+{
+  function double(num: number): number {
+    return num * 2;
+  }
+
+  double(10);
+  double(OK); // 仮引数の型がnumberなので、文字列を渡すとエラーになる
+}
+```
 
 ### 参考
 
