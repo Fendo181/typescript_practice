@@ -192,6 +192,34 @@ TypeScriptではタプル型を使うことができます。
 }
 ```
 
+### オブジェクト型
+
+TypeScriptではオブジェクト型を使うことができます。
+オブジェクト型とは、オブジェクトのプロパティの型を指定することができる型のことです。
+interfaceを使ってオブジェクトの型を指定します。
+これは以前はtypeを使って指定していましたが、現在はinterfaceを使うことが推奨されています。
+
+
+```typescript
+'use strict';
+
+{
+
+ interface User {
+  userName: string,
+  score: number
+ }
+
+const user: User = {
+  userName: 'Taro',
+  score: 80,
+};
+
+user.userName = 'Jiro'
+user.score = 50
+}
+```
+
 ### 参考
 
 
