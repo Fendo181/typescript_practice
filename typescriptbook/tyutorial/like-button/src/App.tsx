@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+const count = 999;
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
 }
 
 function LikeButton() {
-  return <span>ここにボタンが出る予定です</span>
+  const count = 999;
+  return <span className='likeButton'>♥ {count}</span>
 }
 
 export default App;
