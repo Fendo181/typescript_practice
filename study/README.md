@@ -150,6 +150,25 @@ scoresは数値型の配列です。この場合は `: number[]` というよう
 また、配列の要素の型を複数指定したい場合は、`|` で区切って指定します。
 valuesは文字列型と数値型の配列です。この場合は `: (string | number)[]` というように指定します。
 
+### Readonly
+
+TypeScriptでは配列やオブジェクトを読み取り専用にすることができます。
+型配列やオブジェクトの要素の変更を禁止することができます。
+型宣言の前に `readonly` をつけることで読み取り専用にすることができます。
+
+```typescript
+'use strict';
+
+{
+  // readonly をつけると読み取り専用になる
+  const fruits: readonly string[] = ['Apple', 'Banana', 'Grape'];
+  fruits[0] = 'Cherry';
+  fruits.push('Peach'); // これはエラーになる
+}
+```
+
+
+
 ### 参考
 
 
