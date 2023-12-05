@@ -122,7 +122,33 @@ TypeScriptでは型エイリアスを使うことができます。
 このコードでは、ResultStatusという型エイリアスを使っています。
 同じ型を複数の変数で使う場合に、型エイリアスを使うことで楽に変更ができます。
 
+### 配列型
 
+TypeScriptでは配列型を使うことができます。
+配列型とは、配列の要素の型を指定することができる型のことです。
+
+```typescript
+'use strict';
+
+{
+  // 配列の数値型
+  const scores: number[] = [70,90,80];
+  scores[1] = 100
+  scores.push(60)
+  scores[2] = 'Hello'
+  scores.push('Ok!')
+
+  // JavaScript では違う種類の値を一つの配列に含めることができる
+  // 配列に、文字列または数値だけの配列を入れる場合は以下のように指定をします。
+  const values: (string | number)[] = ['Taro', 70, 'Jiro'];
+  values[2] = 80
+  values.push('Saburo')
+  values.push(true)
+```
+
+scoresは数値型の配列です。この場合は `: number[]` というように型を指定します。
+また、配列の要素の型を複数指定したい場合は、`|` で区切って指定します。
+valuesは文字列型と数値型の配列です。この場合は `: (string | number)[]` というように指定します。
 
 ### 参考
 
