@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 const IndexPage: NextPage = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(true);
+  // 画像を取得する
   useEffect(() => {
     fetchRandomCatImage()
       .then((newImage) => {
@@ -12,7 +13,19 @@ const IndexPage: NextPage = () => {
       })
   }, []);
 
-  return <div>{loading || <img src={imageUrl} />}</div>;
+  // ボタンをクリックした時の処理
+  const handleClick = async () => {
+    setLoading(true); // ローディング状態を更新する
+    const newImage = await fetchRandomCatImage();
+    console.log(newImage);
+    setImageUrl(newImage.url); // 画像URLの状態を更新する
+    setLoading(false); // ローディング状態を更新する
+  };
+
+  return <div>
+    <button onClick={handleClick}>他のにゃんこも見る</button>
+    <div>{loading || <img src={imageUrl} />}</div>
+  </div>;
 }
 export default IndexPage;
 
