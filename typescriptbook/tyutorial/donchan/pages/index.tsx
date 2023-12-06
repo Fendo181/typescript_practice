@@ -1,13 +1,18 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { NextPage } from "next";
+import Image from 'next/image'
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
-
-export default IndexPage
+const IndexPage: NextPage = () => {
+  return (
+    <div>
+    <h1>ローカルの画像を表示するデモ</h1>
+    <Image
+      src="/images/don1.jpg" // publicフォルダにある画像へのパス
+      alt="dnchan"
+      width={500} // 画像の幅
+      height={500} // 画像の高さ
+      objectFit="contain"
+    />
+    </div>
+  );
+};
+export default IndexPage;
