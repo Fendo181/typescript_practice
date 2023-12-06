@@ -78,3 +78,4 @@ const isImage = (value: unknown): value is Image => {
 };
 
 fetchRandomCatImage();
+cd
