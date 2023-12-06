@@ -1,11 +1,18 @@
 import { NextPage} from 'next';
+import { useEffect, useState } from 'react';
 
 const IndexPage: NextPage = () => {
-  return (
-    <div>
-      <h1>Cat Image Here!</h1>
-    </div>
-  );
+  const [imageUrl, setImageUrl] = useState("");
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    fetchRandomCatImage()
+      .then((newImage) => {
+        setImageUrl(newImage.url); // 画像URLの状態を更新する
+        setLoading(false); // // ローディング状態を更新する
+      })
+  }, []);
+
+  return <div>{loading || <img src={imageUrl} />}</div>;
 }
 export default IndexPage;
 
@@ -13,7 +20,7 @@ type Image = {
     url: string;
 };
 
-const fetctRandaomCatImage = async (): Promise<Image> => {
+const fetchRandomCatImage = async (): Promise<Image> => {
   const res = await fetch("https://api.thecatapi.com/v1/images/search");
   const images: unknown = await res.json();
 
@@ -42,4 +49,4 @@ const isImage = (value: unknown): value is Image => {
     return "url" in value && typeof value.url === "string";
 };
 
-fetctRandaomCatImage();
+fetchRandomCatImage();
