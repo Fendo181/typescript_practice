@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import React, { useState } from 'react';
 import Image from 'next/image'
+import styles from "./index.module.css";
 
 const IndexPage: NextPage = () => {
 
@@ -28,19 +29,21 @@ const IndexPage: NextPage = () => {
     };
 
   return (
-    <div>
-    <h1>ローカルの画像を表示するデモ</h1>
+    <div className={styles.page}>
+    <h3>ドンちゃん ジェネレーター</h3>
     <Image
       src={currentImage} // publicフォルダにある画像へのパス
       alt="dnchan_image"
-      width={500} // 画像の幅
-      height={500} // 画像の高さ
+      width={600} // 画像の幅
+      height={600} // 画像の高さ
       objectFit="contain"
+      layout="responsive"
     />
     <div>
-      <button onClick={showRandomImage}>画像を変更</button>
+      <button onClick={showRandomImage} className={styles.button}> ドンちゃんを見にいく</button>
     </div>
     </div>
   );
 };
+
 export default IndexPage;
