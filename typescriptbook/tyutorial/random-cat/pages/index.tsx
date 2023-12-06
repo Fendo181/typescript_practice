@@ -9,12 +9,16 @@ const IndexPage: NextPage = () => {
 }
 export default IndexPage;
 
-const fetctRandaomCatImage = async () => {
-    const rest = await fetch("https://api.thecatapi.com/v1/images/search");
-    const images = await rest.json();
-    console.log(images);
-    return images[0];
-}
+type Image = {
+    url: string;
+};
+
+const fetctRandaomCatImage = async (): Promise<Image> => {
+const res = await fetch("https://api.thecatapi.com/v1/images/search");
+const images = await res.json();
+console.log(images);
+return images[0];
+};
 
 
 fetctRandaomCatImage();
